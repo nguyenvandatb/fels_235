@@ -5,16 +5,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def help
-  end
-
   def about
   end
 
-  def contact
-  end
-
-  def post
-    @microposts = Micropost.all.paginate page: params[:page]
+  def help
   end
 end
