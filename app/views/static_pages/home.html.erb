@@ -1,0 +1,11 @@
+<% provide :title, t(".title") %>
+<div class="home" id="home">
+  <div class="slide">
+    <%= image_tag "silde.jpg" %>
+    <div class="slide-content">
+      <h1><%= t ".slide_title" %></br>
+        <%= t ".silde_title_join" %></h1>
+      <%= link_to t(".start_learn"), "#", :class => "btn btn-blue btn-slide" %>
+    </div>
+  </div>
+</div>
