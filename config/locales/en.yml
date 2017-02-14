@@ -6,10 +6,16 @@ en:
   help: "Help"
   login: "Log in"
   register: "Register"
+  logout: "Log out"
+  profile: "Profile"
   submit: "Submit"
   view_profile: "View Profile"
   follower: "Follower"
   following: "Following"
+  delete: "Delete"
+  confirm: "You sure?"
+  danger_err_login: "Please log in"
+  q_holder: "Search name or email"
   layouts:
     application:
       app_name: "Fels235"
@@ -35,6 +41,8 @@ en:
     help:
       title: "Help"
   users:
+    index:
+      title: "All member"
     show:
       title: "Profile user"
       feed_title: "New Feed"
@@ -49,5 +57,6 @@ en:
       remember_me: "Remember me on this computer"
     create:
       login_false: "Invalid email/password combination"
-
+    destroy:
+      success_destroy: "Delete user success"
 
