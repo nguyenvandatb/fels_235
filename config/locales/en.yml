@@ -7,6 +7,9 @@ en:
   login: "Log in"
   register: "Register"
   submit: "Submit"
+  view_profile: "View Profile"
+  follower: "Follower"
+  following: "Following"
   layouts:
     application:
       app_name: "Fels235"
@@ -16,6 +19,7 @@ en:
       slide_title: "10 Million learners on Framgia E-Learning System"
       slide_title_join: "Join Our Global Community"
       start_learn: "Start Learning Today"
+      study: "Study"
     about:
       title: "About"
       name: "Name"
@@ -30,4 +34,8 @@ en:
       person_address_two: "13F Keangnam Landmark 72 Tower"
     help:
       title: "Help"
+  users:
+    show:
+      title: "Profile user"
+      feed_title: "New Feed"
 
