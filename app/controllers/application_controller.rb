@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
     render_404 unless @user
   end
 
+  def load_lesson
+    @lesson = Lesson.find_by id: params[:id]
+    render_404 unless @lesson
+  end
+
   def logged_in_user
     unless logged_in?
       flash["danger"] = t "danger_err_login"

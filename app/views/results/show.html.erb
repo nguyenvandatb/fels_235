@@ -1,0 +1,19 @@
+<div><%= @lesson.correct_count %>/<%= @lesson.words.count %></div>
+<%= form_for @lesson do |f| %>
+  <%= f.fields_for :results do |ff| %>
+    <% result = ff.object %>
+    <div><%= result.word.content %></div>
+    <%= ff.text_field :id, hidden: :true, readonly: :true %>
+    <% result.word.answers.each do |answer| %>
+      <%= ff.label :answer_id, answer.content %>
+      <% if result.answer_id == answer.id %>
+        <%= ff.radio_button :answer_id, answer.id, checked: true, disabled: true %>
+      <% else %>
+        <%= ff.radio_button :answer_id, answer.id, disabled: true %>
+      <% end %>
+    <% end %>
+    <br>
+    <span><%= t "correct_answer" + " " + result.word.correct_content %></span>
+    <hr>
+  <% end %>
+<% end %>
