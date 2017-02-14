@@ -1,10 +1,15 @@
+<% @user ||= current_user  %>
 <ul class="list-group list-group-unbordered">
   <li class="list-group-item">
-    <b><%= t "follower" %></b>
-    <a class="pull-right btn btn-info btn-circle"></a>
+    <b><%= t "following" %></b>
+    <a href="#" class="pull-right btn btn-info btn-circle">
+      <%= @user.following.size %>
+    </a>
   </li>
   <li class="list-group-item">
-    <b><%= t "following" %></b>
-    <a class="pull-right btn btn-info btn-circle"></a>
+    <b><%= t "follower" %></b>
+    <a href="#" class="pull-right btn btn-info btn-circle" id="followers">
+      <%= @user.followers.size %>
+    </a>
   </li>
 </ul>

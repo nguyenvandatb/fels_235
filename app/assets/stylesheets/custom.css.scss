@@ -139,6 +139,9 @@ footer {
       }
     }
   }
+  .nav-tabs-custom {
+    margin-top: 50px;
+  }
 }
 .form-title {
   margin-bottom: 20px;
@@ -169,13 +172,6 @@ footer {
 
 #show_user {
   margin-top: 50px;
-  .feed_title {
-    h2 {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #141414;
-    }
-  }
 }
 .gravatar {
   margin-right: 10px;
@@ -243,6 +239,12 @@ footer {
       font-size: 18px;
       color: #777;
       font-weight: normal;
+      span {
+        font-size: 15px;
+      }
+    }
+    .btn {
+      width: 100%;
     }
   }
 }
@@ -260,6 +262,9 @@ footer {
       span {
         color: red;
       }
+    }
+    .btn {
+      width: 100%;
     }
   }
 }
@@ -279,4 +284,44 @@ footer {
 }
 .form_search_user {
   margin-bottom: 20px;
+}
+.nav-tabs-custom {
+  margin-top: 50px;
+}
+#home-user-box {
+  margin-top: 50px;
+  span {
+    margin-left: 32%;
+  }
+}
+.nav-tabs-custom {
+  margin-bottom: 20px;
+  background: #f8f8f8;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  border-radius: 3px;
+  margin-top: -20px;
+  .feed_title{
+    h2 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  .tab-content {
+    .table-striped {
+      margin-bottom: 0px;
+      tbody {
+        tr {
+          &:nth-of-type(odd){
+            background-color: #fff;
+          };
+        }
+      }
+    }
+  }
+}
+
+#show_follow{
+  .profile-user-img {
+    margin: 0px;
+  }
 }

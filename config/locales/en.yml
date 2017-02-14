@@ -16,6 +16,10 @@ en:
   confirm: "You sure?"
   danger_err_login: "Please log in"
   q_holder: "Search name or email"
+  submit_follow: "Follow"
+  submit_unfollow: "Unfollow"
+  following_users_following: "Following"
+  following_users_followers: "Followers"
   layouts:
     application:
       app_name: "Fels235"
@@ -29,6 +33,7 @@ en:
       slide_title_join: "Join Our Global Community"
       start_learn: "Start Learning Today"
       study: "Study"
+      feed_title: "New Feed"
     about:
       title: "About"
       name: "Name"
@@ -52,16 +57,26 @@ en:
     new:
       register: "Register"
       submit: "Submit"
+      title: "Register"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
   sessions:
     new:
+      title: "Login"
       login: "Log In"
       register: "Register"
       login_email_placeholder: "username@domain.com"
       remember_me: "Remember me on this computer"
+      forgot_password: "Forgot password"
     create:
       login_false: "Invalid email/password combination"
     destroy:
       success_destroy: "Delete user success"
+      feed_title: "Personal Information"
+      email: "Email"
+      name: "Name"
   password_resets:
     create:
       send_reset_email_ok: "Email sent with password reset instructions"
