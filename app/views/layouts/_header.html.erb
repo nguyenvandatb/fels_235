@@ -24,8 +24,13 @@
             <button type="submit" class="btn btn-default"><%= t "submit" %></button>
         </form>
         <ul class="nav navbar-nav navbar-right"">
-          <li><%= link_to t("login"), "#" %></li>
-          <li><%= link_to t("register"), "#" %></li>
+          <% if logged_in? %>
+            <li><%= link_to t("current user"), "#" %></li>
+            <li><%= link_to t("logout"), logout_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to t("login"), login_path %></li>
+            <li><%= link_to t("register"), signup_path %></li>
+          <% end %>
         </ul>
         </div>
       </div>

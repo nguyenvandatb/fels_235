@@ -38,4 +38,16 @@ en:
     show:
       title: "Profile user"
       feed_title: "New Feed"
+    new:
+      register: "Register"
+      submit: "Submit"
+  sessions:
+    new:
+      login: "Log In"
+      register: "Register"
+      login_email_placeholder: "username@domain.com"
+      remember_me: "Remember me on this computer"
+    create:
+      login_false: "Invalid email/password combination"
+
 
