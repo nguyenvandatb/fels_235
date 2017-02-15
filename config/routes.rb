@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :categories, only: :index
   resources :lessons
   resources :words, only: :index
+  namespace :admin do
+    root "admins#index", as: :root
+  end
 end

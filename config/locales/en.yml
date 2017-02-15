@@ -35,6 +35,25 @@ en:
     header:
       profile: "Profile"
       settings: "Settings"
+    admin:
+      title: "Framgia E-Learning System"
+      profile: "Profile"
+      dashboard: "Dashboard"
+      categories: "Categories"
+      all_categories: "All Categories"
+      new_categories: "Add new"
+      words: "Words"
+      all_words: "All words"
+      new_words: "Add new"
+      users: "Users"
+      all_users: "All users"
+      new_user: "Add new"
+      show_user: "Profile"
+      logout: "log out"
+      back_website: "Back Website"
+      copyright: "Technology Supported & SEO Service by Hoang.Duc.Trung@framgia.com"
+      hello: "Hello"
+      admin: "Admin"
   static_pages:
     home:
       title: "Home"
@@ -136,5 +155,13 @@ en:
     error_messages:
       form_error_contain: "The form contains"
       form_error: "error"
-
+  admin:
+    admins:
+      index:
+        title: "Dashboard"
+        categories: "Categories"
+        view_details: "View Details"
+        words: "Words"
+        lessons: "Lessons"
+        users: "Users"
 
