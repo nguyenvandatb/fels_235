@@ -1,0 +1,24 @@
+<div class="col-md-3 col-sm-6 col-xs-12">
+  <div class="category-template">
+    <figure>
+      <%= image_tag "category.png" %>
+      <figcaption>
+        <div class="vertical-middle">
+          <div class="links">
+            <div>
+              <% if logged_in? %>
+                <%= form_for @lesson, method: :post do |f|  %>
+                  <%= f.hidden_field :category_id, value: category.id %>
+                  <%= f.submit t("start_lesson"), class: "btn btn-success btn-md" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </figcaption>
+    </figure>
+    <div class="item-header">
+      <h3><%= category.name %> | <%= category.words.size %> <%= t ".words" %></h3>
+    </div>
+  </div>
+</div>

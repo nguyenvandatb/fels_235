@@ -3,4 +3,5 @@ maximum_email_length: 255
 minimum_password_length: 6
 expired_time: 2
 per_page: 5
+per_page_category: 24
 gravatar_size: 50
