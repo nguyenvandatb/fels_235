@@ -4,4 +4,5 @@ minimum_password_length: 6
 expired_time: 2
 per_page: 5
 per_page_category: 24
+per_page_word: 100
 gravatar_size: 50

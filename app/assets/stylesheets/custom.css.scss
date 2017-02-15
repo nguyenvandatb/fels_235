@@ -328,6 +328,9 @@ footer {
 
 #panel-category {
   background-color: #f8f9f9;
+}
+
+#panel-words {
   h2 {
     font-size: 24px;
     font-weight: bold;
@@ -422,4 +425,12 @@ footer {
 
 #custom-search-input {
   margin-bottom: 20px;
+}
+
+#panel-words {
+  ul {
+    li {
+      padding: 10px;
+    }
+  }
 }
