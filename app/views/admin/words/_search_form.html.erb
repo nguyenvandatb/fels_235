@@ -1,0 +1,29 @@
+<div class="col-md-3">
+  <div class="form-group">
+    <%= select_tag :category_id,
+      options_from_collection_for_select(@categories, :id, :name, params[:category_id]),
+      include_blank: t("category_all"), class: "form-control" %>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group">
+    <%= select_tag :action_met,
+      options_for_select([t("alphabet"), t("alphabet_desc"), t("date")],
+      selected: params[:action_met]), class: "form-control" %>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="form-group">
+    <%= text_field_tag :q, params[:q], placeholder: t("q_holder_word"),
+      class: "form-control" %>
+  </div>
+</div>
+<div class="col-md-1">
+  <%= button_tag t("filter"), class: "btn btn-primary" %>
+</div>
+<div class="col-md-1">
+<%= link_to t("add_word"), new_admin_word_path, class: "btn btn-primary" %>
+</div>
+<div class="col-md-1">
+  <%= link_to t("delete"), "#", class: "btn btn-danger", id: "delete_all" %>
+</div>

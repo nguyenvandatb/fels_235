@@ -18,6 +18,7 @@ gem "turbolinks", "5.0.1"
 gem "jbuilder", "2.4.1"
 gem "config"
 gem "font-awesome-rails"
+gem "i18n-js"
 
 group :development, :test do
   gem "sqlite3", "1.3.12"

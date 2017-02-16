@@ -6,6 +6,10 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "admin", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "admin", "data-turbolinks-track": true %>
+    <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    </script>
 </head>
 <body>
   <div id="wrapper">
@@ -64,7 +68,7 @@
                   <a href="#"><%= t ".all_words" %></a>
                 </li>
                 <li>
-                  <%= link_to t(".new_words"), new_admin_word_path %>
+                  <%= link_to t(".new_words"), "#" %>
                 </li>
               </ul>
           </li>

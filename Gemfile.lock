@@ -223,6 +223,8 @@ GEM
       guard-compat (~> 1.2)
       minitest (>= 3.0)
     i18n (0.8.0)
+    i18n-js (2.1.2)
+      i18n
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.4.1)
@@ -366,6 +368,7 @@ DEPENDENCIES
   font-awesome-rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
+  i18n-js
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
   listen (= 3.0.8)

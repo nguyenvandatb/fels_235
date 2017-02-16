@@ -1,0 +1,16 @@
+<tr>
+  <td><%= check_box_tag :word_ids, word.id, false, class: "cb-element" %></td>
+  <td value="<%= word.content %>"><%= word.content %></td>
+  <td>
+    <%= word.correct_content %>
+  </td>
+  <td><%= word.created_at %></td>
+  <td class="action">
+    <%= link_to admin_word_path(word), class: "btn btn-info btn-round" do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+    <%= link_to  edit_admin_word_path(word), class: "btn btn-success btn-round" do %>
+      <i class="fa fa-pencil"></i>
+    <% end %>
+  </td>
+</tr>

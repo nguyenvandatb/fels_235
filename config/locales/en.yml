@@ -14,6 +14,11 @@ en:
   following: "Following"
   delete: "Delete"
   confirm: "You sure?"
+  not_null_ids: "You choice words!"
+  delete_success: "Delete success"
+  status: "OK"
+  status_fails: "FAILS"
+  delete_fails: "Delete fails!"
   danger_err_login: "Please log in"
   q_holder: "Search name or email"
   q_holder_cat: "Search name"
@@ -36,6 +41,7 @@ en:
   validate_answer_same: "Not same"
   image_size_message: "Image size should not be over 5MB"
   alphabet_desc: "alphabetcba"
+  validate_results_exits: "Words exits in results"
   date: "date"
   layouts:
     application:
@@ -192,6 +198,16 @@ en:
         lessons: "Lessons"
         users: "Users"
     words:
+      index:
+        title: "All words"
+        not_found_words: "Not found words"
+        count_words: "Found words: "
+        words: " words"
+        add_word: "Add word"
+        words: "Words"
+        meaning: "Meaning"
+        created: "Created"
+        action: "Action"
       new:
         title: "Add New Word"
       form:
