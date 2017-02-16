@@ -22,6 +22,13 @@ en:
   submit_unfollow: "Unfollow"
   following_users_following: "Following"
   following_users_followers: "Followers"
+  category_all: "All categories"
+  all_words: "all_words"
+  learned: "learned"
+  not_learned: "not_learned"
+  q_holder_word: "Search name"
+  alphabet: "alphabet"
+  filter: "Filter"
   layouts:
     application:
       app_name: "Fels235"
@@ -34,8 +41,9 @@ en:
       slide_title: "10 Million learners on Framgia E-Learning System"
       slide_title_join: "Join Our Global Community"
       start_learn: "Start Learning Today"
-      study: "Study"
+      study: "Lessons"
       feed_title: "New Feed"
+      words: "Words"
     about:
       title: "About"
       name: "Name"
