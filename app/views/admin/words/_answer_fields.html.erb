@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="form-group">
+      <%= f.label :content, t(".content") %>
+      <%= f.text_field :content, class: "form-control" %>
+      <div class="checkbox">
+        <%= f.label :is_correct do %>
+          <%= f.check_box :is_correct, class: "checkbox" %>
+          <%= t ".correct_answer" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 remove-answer">
+    <div class="btn btn-danger" style="margin-top: 25px;">
+       <%= remove_answer raw("<i class='fa fa-times'></i>"), f %>
+    </div>
+  </div>
+</div>
+

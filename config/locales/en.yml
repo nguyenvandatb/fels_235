@@ -30,6 +30,9 @@ en:
   alphabet: "alphabet"
   filter: "Filter"
   cannot_create_lesson: "Cannot create lesson"
+  validate_answer_min: "Needs 2 or more items"
+  validate_answer_correct: "Need 1 answer correct"
+  validate_answer_same: "Not same"
   layouts:
     application:
       app_name: "Fels235"
@@ -146,6 +149,22 @@ en:
       start_lesson: "Start Lession"
       words: "words"
       not_found_category: "Not found categories in database"
+    show:
+      create_lesson: "Create Lesson"
+      title: "Category"
+    lesson_item:
+      lesson: "Lesson"
+      test: "Test"
+      result: "Result"
+  lessons:
+    test:
+      submit: "Submit"
+    create:
+      err_message: "Cannot create lesson"
+  results:
+    show:
+      update_failed: "Update failed"
+      correct_answer: "Correct Answer"
   words:
     index:
       title: "All words"
@@ -165,20 +184,16 @@ en:
         words: "Words"
         lessons: "Lessons"
         users: "Users"
-  categories:
-    show:
-      create_lesson: "Create Lesson"
-      title: "Category"
-    lesson_item:
-      lesson: "Lesson"
-      test: "Test"
-      result: "Result"
-  lessons:
-    test:
-      submit: "Submit"
-    create:
-      err_message: "Cannot create lesson"
-  results:
-    show:
-      update_failed: "Update failed"
-      correct_answer: "Correct Answer"
+
+    words:
+      new:
+        title: "Add New Word"
+      form:
+        category_id: "All categories"
+        add: "Add new answer"
+        save: "Save words"
+      answer_fields:
+        content: "Content answer"
+        correct_answer: "Correct answer"
+      create:
+        success: "Create word and answer success!"
