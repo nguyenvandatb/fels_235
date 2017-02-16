@@ -64,6 +64,12 @@ en:
       email: "Email"
       password: "Password"
       password_confirmation: "Password Confirmation"
+    edit:
+      edit_user: "Update Profile"
+      submit: "Save changes"
+      change_link: "Change link"
+    update:
+      profile_updated_message: "Profile updated"
   sessions:
     new:
       title: "Login"
@@ -118,4 +124,9 @@ en:
       word: "Words"
       meanning: "Meanning"
       not_found_word: "Not found record"
+  shared:
+    error_messages:
+      form_error_contain: "The form contains"
+      form_error: "error"
+
 
