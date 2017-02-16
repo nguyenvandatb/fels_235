@@ -112,4 +112,10 @@ en:
       start_lesson: "Start Lession"
       words: "words"
       not_found_category: "Not found categories in database"
+  words:
+    index:
+      title: "All words"
+      word: "Words"
+      meanning: "Meanning"
+      not_found_word: "Not found record"
 

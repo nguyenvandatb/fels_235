@@ -1,0 +1,34 @@
+<%= provide :title, t(".title") %>
+<div id="panel-words">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center"><%= t ".title" %></h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <div class="panel">
+          <div class="panel-body">
+            <% if @words.any? %>
+              <ul class="list-inline text-center">
+                <%= render @words %>
+              </ul>
+            <% else %>
+              <div class="alert alert-warning">
+                <%= t ".not_found_word" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <%= will_paginate %>
+      </div>
+    </div>
+  </div>
+</div>
