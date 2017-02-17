@@ -52,7 +52,7 @@
                 <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="demo" class="collapse">
                 <li>
-                  <a href="#"><%= t ".all_categories" %></a>
+                  <%= link_to t(".all_categories"), admin_categories_path %>
                 </li>
                 <li>
                   <%= link_to t(".new_categories"), new_admin_category_path %>
@@ -78,13 +78,13 @@
                 <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="users" class="collapse">
                 <li>
-                  <a href="#"><%= t ".all_users" %></a>
+                  <%= link_to t(".all_users"), admin_users_path %>
                 </li>
                 <li>
-                  <a href="#"><%= t ".new_user" %></a>
+                  <%= link_to t(".new_user"), new_admin_user_path %>
                 </li>
                 <li>
-                  <a href="#"><%= t ".show_user" %></a>
+                  <%= link_to t(".show_user"), user_path(current_user) %>
                 </li>
               </ul>
           </li>
