@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :words, only: :index
   namespace :admin do
     root "admins#index", as: :root
+    resources :words
   end
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :categories do

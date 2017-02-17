@@ -1,0 +1,26 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :category_id, t(".category_id") %>
+    <%= select_tag :category_id,
+      options_from_collection_for_select(@categories, :id, :name,
+        params[:category_id]), name: "word[category_id]", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, t(".content") %>
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="answer_field" id="answer_field">
+    <%= f.fields_for :answers do |builder| %>
+      <%= render "answer_fields", f: builder %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= add_answer raw("<i class='fa fa-plus'></i>"),
+      f, :answers %>
+    <%= t ".add" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit t(".save"), class: "btn btn-primary" %>
+  </div>
+<% end %>
