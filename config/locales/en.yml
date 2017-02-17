@@ -221,6 +221,9 @@ en:
         correct_answer: "Correct answer"
       create:
         success: "Create word and answer success!"
+      update:
+        success: "Update word and answer success!"
+        error: "Update word and answer err!"
     categories:
       new:
         title: "Add A Category"
@@ -261,12 +264,7 @@ en:
       new:
         title: "New User"
         submit: "Submit"
-  lessons:
-    test:
-      submit: "Submit"
-    create:
-      err_message: "Cannot create lesson"
-  results:
-    show:
-      update_failed: "Update failed"
-      correct_answer: "Correct Answer"
+      update:
+        success: "Update word and answer success!"
+      edit:
+        title: "Update word"

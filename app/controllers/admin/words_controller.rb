@@ -1,7 +1,7 @@
 class Admin::WordsController < ApplicationController
   before_action :logged_in_user, :admin_user
-  before_action :load_all_categories, only: [:new, :create, :index]
-  before_action :load_word, only: :show
+  before_action :load_all_categories, except: [:show, :destroy]
+  before_action :load_word, only: [:edit, :update, :show]
   layout "admin"
 
   def index
@@ -64,9 +64,22 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @word.update_attributes word_params
+      flash[:success] = t ".success"
+      redirect_to admin_words_url
+    else
+      flash[:error] = t ".error"
+      render :edit
+    end
+  end
+
   private
   def load_all_categories
-    @categories = Category.select(:id, :name)
+    @categories = Category.select :id, :name
   end
 
   def word_params
