@@ -29,6 +29,7 @@ en:
   q_holder_word: "Search name"
   alphabet: "alphabet"
   filter: "Filter"
+  cannot_create_lesson: "Cannot create lesson"
   layouts:
     application:
       app_name: "Fels235"
@@ -164,4 +165,20 @@ en:
         words: "Words"
         lessons: "Lessons"
         users: "Users"
-
+  categories:
+    show:
+      create_lesson: "Create Lesson"
+      title: "Category"
+    lesson_item:
+      lesson: "Lesson"
+      test: "Test"
+      result: "Result"
+  lessons:
+    test:
+      submit: "Submit"
+    create:
+      err_message: "Cannot create lesson"
+  results:
+    show:
+      update_failed: "Update failed"
+      correct_answer: "Correct Answer"

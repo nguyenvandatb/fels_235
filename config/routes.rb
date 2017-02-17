@@ -16,4 +16,14 @@ Rails.application.routes.draw do
   namespace :admin do
     root "admins#index", as: :root
   end
+  resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :categories do
+    resources :lessons do
+      member do
+        get "test", to: "tests#show"
+        patch "result", to: "results#show"
+        get "result", to: "results#show"
+      end
+    end
+  end
 end

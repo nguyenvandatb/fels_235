@@ -1,0 +1,13 @@
+<%= form_for @lesson, url: result_category_lesson_path(@lesson.category, @lesson) do |f| %>
+  <%= f.fields_for :results do |ff| %>
+    <% result = ff.object %>
+    <div><%= result.word.content %></div>
+    <%= ff.text_field :id, hidden: :true, readonly: :true %>
+    <% result.word.answers.each do |answer| %>
+      <%= ff.label :answer_id, answer.content %>
+      <%= ff.radio_button :answer_id, answer.id %>
+    <% end %>
+    <hr>
+  <% end %>
+  <%= f.submit t("submit"), class: "btn btn-primary" %>
+<% end %>
