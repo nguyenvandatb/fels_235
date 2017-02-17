@@ -30,9 +30,13 @@ en:
   alphabet: "alphabet"
   filter: "Filter"
   cannot_create_lesson: "Cannot create lesson"
+  cannot_destroy_category: "Cannot destroy category"
   validate_answer_min: "Needs 2 or more items"
   validate_answer_correct: "Need 1 answer correct"
   validate_answer_same: "Not same"
+  image_size_message: "Image size should not be over 5MB"
+  alphabet_desc: "alphabetcba"
+  date: "date"
   layouts:
     application:
       app_name: "Fels235"
@@ -149,6 +153,7 @@ en:
       start_lesson: "Start Lession"
       words: "words"
       not_found_category: "Not found categories in database"
+      word_count: "Number of words"
     show:
       create_lesson: "Create Lesson"
       title: "Category"
@@ -165,6 +170,8 @@ en:
     show:
       update_failed: "Update failed"
       correct_answer: "Correct Answer"
+    new:
+      submit: "Submit"
   words:
     index:
       title: "All words"
@@ -184,7 +191,6 @@ en:
         words: "Words"
         lessons: "Lessons"
         users: "Users"
-
     words:
       new:
         title: "Add New Word"
@@ -197,3 +203,31 @@ en:
         correct_answer: "Correct answer"
       create:
         success: "Create word and answer success!"
+    categories:
+      new:
+        title: "Add A Category"
+      create:
+        create_success: "Add successfully!"
+        create_error: "Cannot add category"
+      search_form:
+        add_category: "Add Category"
+        filter: "Filter"
+      index:
+        count_categories: "Found categories: "
+        categories: "categories"
+        name: "Name"
+        description: "Description"
+        created: "Created"
+        title: "All Category"
+      destroy:
+        delete_success: "Category deleted"
+        delete_error: "Cannot delete category"
+  lessons:
+    test:
+      submit: "Submit"
+    create:
+      err_message: "Cannot create lesson"
+  results:
+    show:
+      update_failed: "Update failed"
+      correct_answer: "Correct Answer"

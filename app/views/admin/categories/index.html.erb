@@ -1,0 +1,40 @@
+<%= provide :title, t(".title") %>
+<div class="row">
+  <div class="">
+    <%= form_for categories_path, method: :get,
+      class: "search_form_category" do %>
+        <%= render "search_form" %>
+    <% end %>
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <p><%= t ".count_categories" %><b><%= @categories.size %></b><%= t ".categories" %></p>
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+         <thead>
+           <tr>
+             <th><input type="checkbox" class="icheck-me" data-skin="square" data-color="blue"></th>
+             <th><%= t ".word_count" %></th>
+             <th><%= t ".name" %></th>
+             <th><%= t ".description" %></th>
+             <th><%= t ".created" %></th>
+             <th><%= t ".action" %></th>
+           </tr>
+         </thead>
+         <tbody>
+           <% if @categories.any? %>
+             <% @categories.each_with_index do |category, index| %>
+               <%= render category, index: index %>
+             <% end %>
+           <% else %>
+             <div class="alert alert-warning">
+               <%= t ".not_found_categories" %>
+             </div>
+           <% end %>
+         </tbody>
+      </table>
+    </div>
+    <p class="text-center"><%= will_paginate @categories %></p>
+  </div>
+</div>

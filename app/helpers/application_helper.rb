@@ -8,6 +8,10 @@ module ApplicationHelper
    end
   end
 
+  def increase_index items, index
+    items.offset + index + 1
+  end
+
   def render_404
    respond_to do |format|
     format.html{render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found}

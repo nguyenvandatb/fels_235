@@ -11,3 +11,9 @@ number_questions: 1
 number_questions_validate_min: 2
 number_questions_validate_max: 6
 number_questions_validate_equal: 1
+max_category_name_length: 50
+max_image_size: 5
+in_megabyte_number: 1024
+stt_0: 0
+stt_1: 1
+per_page_category_admin: 5
