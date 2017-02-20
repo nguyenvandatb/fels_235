@@ -3,7 +3,7 @@ class Word < ApplicationRecord
   has_many :results
   has_many :answers
   validates :content, presence: true
-  validate :check_answer_count, :check_answer_is_correct, :check_answer_equal
+
   accepts_nested_attributes_for :answers,
     reject_if: ->answer{answer[:content].blank?},
     allow_destroy: true

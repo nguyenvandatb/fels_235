@@ -1,7 +1,11 @@
 <div class="col-md-3 col-sm-6 col-xs-12">
   <div class="category-template">
     <figure>
-      <%= image_tag "category.png" %>
+      <% if category.image? %>
+        <%= image_tag category.image.url %>
+      <% else %>
+        <%= image_tag "category.png" %>
+      <% end %>
       <figcaption>
         <div class="vertical-middle">
           <div class="links">

@@ -1,0 +1,11 @@
+<%= form_for [:admin, @category], html: {multipart: true} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control" %>
+  <span class="picture">
+    <%= f.file_field :image %>
+  </span>
+  <%= f.submit t("submit"), class: "btn btn-primary" %>
+<% end %>

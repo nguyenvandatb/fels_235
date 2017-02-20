@@ -16,5 +16,12 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
+  $('#category_image').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/Settings.in_megabyte_number/
+      Settings.in_megabyte_number;
+    if (size_in_megabytes > Settings.max_image_size) {
+      alert(I18n.t("image_size_message"));
+    }
+  });
 });
