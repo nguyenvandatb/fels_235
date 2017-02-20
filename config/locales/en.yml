@@ -210,6 +210,8 @@ en:
         action: "Action"
       new:
         title: "Add New Word"
+      show:
+        not_found_words: "Not found answer"
       form:
         category_id: "All categories"
         add: "Add new answer"

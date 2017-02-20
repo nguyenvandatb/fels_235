@@ -1,6 +1,7 @@
 class Admin::WordsController < ApplicationController
   before_action :logged_in_user, :admin_user
   before_action :load_all_categories, only: [:new, :create, :index]
+  before_action :load_word, only: :show
   layout "admin"
 
   def index
@@ -65,11 +66,17 @@ class Admin::WordsController < ApplicationController
 
   private
   def load_all_categories
-    @categories = Category.all
+    @categories = Category.select(:id, :name)
   end
 
   def word_params
     params.require(:word).permit :content, :category_id,
       answers_attributes: [:id, :content, :is_correct, :_destroy]
+  end
+
+  def load_word
+    @word = Word.find_by id: params[:id]
+    render_404 unless @word
+    @answers = @word.answers
   end
 end
