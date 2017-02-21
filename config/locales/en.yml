@@ -175,6 +175,10 @@ en:
       submit: "Submit"
     create:
       err_message: "Cannot create lesson"
+  tests:
+    show:
+      back: "Back"
+      next: "Next"
   results:
     show:
       update_failed: "Update failed"
@@ -241,12 +245,10 @@ en:
         title: "Add A Category"
       create:
         create_success: "Add successfully!"
-        create_error: "Cannot add category"
       search_form:
         add_category: "Add Category"
         filter: "Filter"
       index:
-        count_categories: "Found categories: "
         categories: "categories"
         name: "Name"
         description: "Description"
@@ -299,3 +301,4 @@ en:
       follow: "followed "
       unfollow: "unfollowed "
       ago: " ago"
+

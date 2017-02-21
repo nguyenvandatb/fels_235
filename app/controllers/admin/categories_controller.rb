@@ -22,10 +22,10 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new category_params
     if @category.save
       flash[:success] = t ".create_success"
+      redirect_to action: :index
     else
-      flash[:error] = t ".create_error"
+      render :new
     end
-    redirect_to action: :index
   end
 
   def edit
