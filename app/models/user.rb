@@ -73,6 +73,17 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+      WHERE  follower_id = :user_id"
+    Activity.where("user_id IN (#{following_ids})
+      OR user_id = :user_id", user_id: id).order(created_at: :desc)
+  end
+
+  def self.create_activity user_id, action_type, action_id
+    Activity.create user_id: user_id, action_type: action_type, action_id: action_id
+  end
+
   private
     def downcase_email
       self.email = email.downcase

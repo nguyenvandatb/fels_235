@@ -1,0 +1,25 @@
+<tr>
+  <td><%= increase_index @activities, index %></td>
+  <td>
+    <span>
+      <% case activity.action_type %>
+      <% when "start_lesson" %>
+        <% verb = t(".start") %>
+      <% when "finish_lesson" %>
+        <% verb = t(".finish") %>
+      <% when "follow" %>
+        <% verb = t(".follow") %>
+      <% when "unfollow" %>
+        <% verb = t(".unfollow") %>
+      <% end %>
+      <% if activity.user_id == current_user.id %>
+        <% actor = t ".you" %>
+      <% else %>
+        <% actor = activity.actor_name + " " %>
+      <% end %>
+      <%= actor << verb << activity.target_name %>
+    </span>
+    <span id="timepost"><%= time_ago_in_words(activity.created_at) %><%= t ".ago" %>.
+    </span>
+  </td>
+</tr>
