@@ -10,8 +10,8 @@ en:
   profile: "Profile"
   submit: "Submit"
   view_profile: "View Profile"
-  follower: "Follower"
-  following: "Following"
+  followers: "Follower"
+  followinng: "Following"
   delete: "Delete"
   confirm: "You sure?"
   not_null_ids: "You choice words!"
@@ -43,6 +43,7 @@ en:
   alphabet_desc: "alphabetcba"
   validate_results_exits: "Words exits in results"
   date: "date"
+  not_found_users: "Not found users"
   layouts:
     application:
       app_name: "Fels235"
@@ -188,6 +189,12 @@ en:
     error_messages:
       form_error_contain: "The form contains"
       form_error: "error"
+  follower:
+    show:
+      title: "Follower"
+  following:
+    show:
+      title: "Following"
   admin:
     admins:
       index:
