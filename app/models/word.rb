@@ -8,7 +8,7 @@ class Word < ApplicationRecord
     reject_if: ->answer{answer[:content].blank?},
     allow_destroy: true
   scope :filter_category, ->category_id{where category_id: category_id if category_id.present?}
-  scope :search, -> q{where "content LIKE ?", "%#{q}%"}
+  scope :search, ->q{where "content LIKE ?", "%#{q}%"}
   scope :learned, ->user_id{where "id IN (SELECT word_id FROM answers WHERE is_correct = true
    AND id IN (SELECT word_id FROM results WHERE lesson_id IN
     (SELECT id FROM lessons WHERE user_id = #{user_id})))"}
@@ -61,7 +61,7 @@ class Word < ApplicationRecord
       self.answers.size <= Settings.number_questions_validate_max
       @duplicate = self.answers.detect{|answer| self.answers.count(answer) >
         Settings.number_questions_validate_equal}
-      errors.add :items, I18n.t("validate_answer_same") if @duplicate.nil?
+      errors.add :items, I18n.t("validate_answer_same") unless @duplicate.nil?
     end
   end
 

@@ -65,10 +65,10 @@
                 <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="words" class="collapse">
                 <li>
-                  <a href="#"><%= t ".all_words" %></a>
+                  <%= link_to t(".all_words"), admin_words_path %>
                 </li>
                 <li>
-                  <%= link_to t(".new_words"), "#" %>
+                  <%= link_to t(".new_words"), new_admin_word_path %>
                 </li>
               </ul>
           </li>
