@@ -96,6 +96,22 @@
   68%,80% {transform:translateY(-50%);}
   85%,97% {transform:translateY(-25%);}
 }
+
 .page-header {
   text-align: center;
+}
+.btn-round {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
+table {
+  text-align: center;
+  thead {
+    tr {
+      th {
+        text-align: center;
+      }
+    }
+  }
 }

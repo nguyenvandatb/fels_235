@@ -17,8 +17,10 @@ Rails.application.routes.draw do
     root "admins#index", as: :root
     resources :words
     resources :categories
+    resources :words do
+      delete :destroy, on: :collection
+    end
   end
-  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :categories do
     resources :lessons do
       member do

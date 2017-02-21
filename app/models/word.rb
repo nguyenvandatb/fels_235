@@ -17,7 +17,11 @@ class Word < ApplicationRecord
     (SELECT id FROM lessons WHERE user_id = #{user_id})))"}
   scope :all_words, ->user_id{}
   scope :alphabet, ->user_id{order("content")}
-
+  scope :alphabetcba, ->user_id{order("content DESC")}
+  scope :date, ->user_id{order("created_at")}
+  before_destroy :check_for_results
+  $total_not_destroy = []
+  $total_destroy = []
   def correct_answer
     self.answers.each do |answer|
       if answer.is_correct
@@ -58,6 +62,16 @@ class Word < ApplicationRecord
       @duplicate = self.answers.detect{|answer| self.answers.count(answer) >
         Settings.number_questions_validate_equal}
       errors.add :items, I18n.t("validate_answer_same") if @duplicate.nil?
+    end
+  end
+
+  def check_for_results
+    if results.any?
+      errors.add :base, I18n.t("validate_results_exits")
+      $total_not_destroy.push(self.content)
+      throw :abort
+    else
+      $total_destroy.push(self.content)
     end
   end
 end

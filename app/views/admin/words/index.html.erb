@@ -1,0 +1,39 @@
+<%= provide :title, t(".title") %>
+<div class="row">
+  <div class="">
+    <%= form_for words_path, method: :get,
+      class: "search_form_word" do %>
+       <%= render "search_form" %>
+    <% end %>
+  </div>
+  <div id="notify-message" class="col-md-6 col-md-offset-3">
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <p><%= t ".count_words" %><b><%= @words.size %></b> <%= t ".words" %></p>
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped" id="tab">
+         <thead>
+           <tr>
+             <th><%= check_box_tag :check_all,"check all" %></th>
+             <th><%= t ".words" %></th>
+             <th><%= t ".meaning" %></th>
+             <th><%= t ".created" %></th>
+             <th><%= t ".action" %></th>
+           </tr>
+         </thead>
+         <tbody id="tab_body">
+           <% if @words.any? %>
+             <%= render @words %>
+           <% else %>
+             <div class="alert alert-warning">
+               <%= t ".not_found_words" %>
+             </div>
+           <% end %>
+         </tbody>
+      </table>
+    </div>
+    <p class="text-center"><%= will_paginate %></p>
+  </div>
+</div>
