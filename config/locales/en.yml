@@ -235,9 +235,30 @@ en:
         description: "Description"
         created: "Created"
         title: "All Category"
+        add_category: "Add Category"
+      edit:
+        title: "Edit Category"
+      update:
+        edit_success: "Edit category successfully"
+        edit_error: "Cannot edit category"
       destroy:
         delete_success: "Category deleted"
         delete_error: "Cannot delete category"
+    users:
+      create:
+        create_success: "User created"
+        create_error: "Cannot create user"
+      destroy:
+        delete_success: "User deleted"
+        delete_error: "Cannot delete user"
+      index:
+        title: "All User"
+        count_users: "Found users: "
+        users: "users"
+        add_button_text: "Add new user"
+      new:
+        title: "New User"
+        submit: "Submit"
   lessons:
     test:
       submit: "Submit"

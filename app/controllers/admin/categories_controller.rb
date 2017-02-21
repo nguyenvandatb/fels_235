@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user, :admin_user
-  before_action :load_category, only: [:edit, :destroy]
+  before_action :load_category, only: [:edit, :update, :destroy]
   layout "admin"
 
   def index
@@ -33,11 +33,11 @@ class Admin::CategoriesController < ApplicationController
 
   def update
     if @category.update_attributes category_params
-      flash[:success] = t ".update_success"
-      redirect_to @user
+      flash[:success] = t ".edit_success"
     else
-      render :edit
+      flash[:error] = t ".edit_error"
     end
+    redirect_to action: :index
   end
 
   def destroy

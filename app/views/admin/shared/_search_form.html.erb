@@ -1,0 +1,19 @@
+<div class="col-md-4">
+  <div class="form-group">
+    <%= select_tag :action_met,
+      options_for_select([t("alphabet"), t("alphabet_desc"), t("date")],
+       selected: params[:action_met]), class: "form-control" %>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="form-group">
+    <%= text_field_tag :q, params[:q], placeholder: t("q_holder_word"),
+      class: "form-control" %>
+  </div>
+</div>
+<div class="col-md-1">
+  <%= button_tag t("filter"), class: "btn btn-primary" %>
+</div>
+<div class="col-md-2">
+  <%= link_to yield(:add_button_text), yield(:add_link), class: "btn btn-danger" %>
+</div>

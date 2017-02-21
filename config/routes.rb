@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     root "admins#index", as: :root
     resources :words
     resources :categories
+    resources :users
     resources :words do
       delete :destroy, on: :collection
     end

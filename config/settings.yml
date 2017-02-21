@@ -16,6 +16,7 @@ max_image_size: 5
 in_megabyte_number: 1024
 stt_0: 0
 stt_1: 1
-per_page_category_admin: 5
 per_page_word_admin: 30
 default_locale: "en"
+per_page_category_admin: 20
+per_page_user_admin: 20

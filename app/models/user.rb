@@ -17,8 +17,10 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true,
     length: {minimum: Settings.minimum_password_length}, allow_nil: true
-  default_scope {order "name ASC"}
-  scope :search, -> q{where "name LIKE ? OR email LIKE ?", "%#{q}%", "%#{q}%"}
+  scope :search, ->q{where "name LIKE ? OR email LIKE ?", "%#{q}%", "%#{q}%"}
+  scope :alphabet, ->{order("name")}
+  scope :alphabetcba, ->{order("name DESC")}
+  scope :date, ->{order("created_at")}
 
   def forget
     update_attribute :remember_digest, nil
