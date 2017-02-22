@@ -1,5 +1,17 @@
-<li id="lesson-<%= lesson.id %>">
-  <span><%= t ".lesson" + lesson.id.to_s %></span>
-  <span><%= link_to t(".test"), test_category_lesson_path(lesson.category, lesson) %></span>
-  <span><%= link_to t(".result"), result_category_lesson_path(lesson.category, lesson) %></span>
+<li>
+  <a href="javascript:void(0);">
+    <i class="fa fa-list-alt"></i>
+    <%= t ".lesson" %> <%= lesson.id.to_s %>
+    <span class="fa arrow"></span>
+  </a>
+  <ul class="nav nav-second-level collapse" aria-expanded="false">
+    <li>
+      <%= link_to t(".test"), test_category_lesson_path(lesson.category, lesson) %>
+    </li>
+    <% if lesson.is_finished %>
+      <li>
+        <%= link_to t(".result"), result_category_lesson_path(lesson.category, lesson) %>
+      </li>
+    <% end %>
+  </ul>
 </li>

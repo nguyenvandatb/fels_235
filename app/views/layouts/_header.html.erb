@@ -16,13 +16,10 @@
           <ul class="nav navbar-nav">
             <li><%= link_to t("about"), about_path %></li>
             <li><%= link_to t("help"), help_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to t("lesson"), categories_path %></li>
+            <% end %>
           </ul>
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default"><%= t "submit" %></button>
-        </form>
         <ul class="nav navbar-nav navbar-right"">
           <% if logged_in? %>
             <li><%= link_to t("members"), users_path %></li>
@@ -36,6 +33,9 @@
                 <li><%= link_to t("profile"), current_user %></li>
                 <li><%= link_to t("settings"), edit_user_path(current_user) %></li>
                 <li><%= link_to t("logout"), logout_path, method: :delete %></li>
+                <% if current_user.is_admin? %>
+                  <li><%= link_to t("super_admin"), admin_root_path %></li>
+                <% end %>
               </ul>
             </li>
           <% else %>
