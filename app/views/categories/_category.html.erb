@@ -11,7 +11,7 @@
           <div class="links">
             <div>
               <% if logged_in? %>
-                <%= form_for @lesson, method: :post do |f|  %>
+                <%= form_for category, html: {method: :get} do |f|  %>
                   <%= f.hidden_field :category_id, value: category.id %>
                   <%= f.submit t("start_lesson"), class: "btn btn-success btn-md" %>
                 <% end %>

@@ -1,13 +1,40 @@
 <%= form_for @lesson, url: result_category_lesson_path(@lesson.category, @lesson) do |f| %>
-  <%= f.fields_for :results do |ff| %>
-    <% result = ff.object %>
-    <div><%= result.word.content %></div>
-    <%= ff.text_field :id, hidden: :true, readonly: :true %>
-    <% result.word.answers.each do |answer| %>
-      <%= ff.label :answer_id, answer.content %>
-      <%= ff.radio_button :answer_id, answer.id %>
+  <div class="row">
+    <% number_question = @lesson.results.count %>
+    <%= f.fields_for :results do |ff| %>
+      <% result = ff.object %>
+      <div class="question col-md-8" style="display:none">
+        <div class="question_word"><%= result.word.content %></div>
+        <%= ff.text_field :id, hidden: :true, readonly: :true %>
+        <div class="question_answer">
+          <% result.word.answers.each do |answer| %>
+            <%= ff.label :answer_id, answer.content %>
+            <%= ff.radio_button :answer_id, answer.id, checked: false %>
+          <% end %>
+        </div>
+        <hr>
+      </div>
     <% end %>
-    <hr>
-  <% end %>
-  <%= f.submit t("submit"), class: "btn btn-primary" %>
+    <div class="lesson_info col-md-4">
+      <div class="lesson_progress_text">
+        <span class="current_question_count">1</span>/
+        <span><%= number_question %></span>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-info lesson_progress_bar" role="progressbar"
+          aria-valuenow="1" aria-valuemin="1" aria-valuemax=<%= number_question %>
+            style="width:<%= 100 / number_question %>%">
+        </div>
+      </div>
+      <div>
+        <%= f.submit t("submit"), class: "btn btn-primary submit_test", style: "display:none" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="next_prev col-md-8">
+      <button type="button" class="btn btn-default prev" disabled="true"><%= t ".back" %></button>
+      <button type="button" class="btn btn-primary next"><%= t ".next" %></button>
+    </div>
+  </div>
 <% end %>
