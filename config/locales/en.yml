@@ -44,6 +44,8 @@ en:
   validate_results_exits: "Words exits in results"
   date: "date"
   not_found_users: "Not found users"
+  super_admin: "Dashboard"
+  lesson: "Lessons"
   layouts:
     application:
       app_name: "Fels235"
@@ -166,8 +168,8 @@ en:
       title: "Category"
     lesson_item:
       lesson: "Lesson"
-      test: "Test"
-      result: "Result"
+      test: "Start test"
+      result: "View result"
   lessons:
     test:
       submit: "Submit"
@@ -189,6 +191,9 @@ en:
     error_messages:
       form_error_contain: "The form contains"
       form_error: "error"
+    sibar_lesson:
+      test: "Test"
+      create_lesson: "Create lesson"
   follower:
     show:
       title: "Follower"
@@ -256,6 +261,8 @@ en:
       destroy:
         delete_success: "Category deleted"
         delete_error: "Cannot delete category"
+      lesson_item:
+        lesson: "Lesson"
     users:
       create:
         create_success: "User created"

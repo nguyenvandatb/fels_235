@@ -5,7 +5,6 @@ class Lesson < ApplicationRecord
   has_many :words, through: :results
   accepts_nested_attributes_for :results, reject_if:
     proc {|result| result[:answer_id].blank?}
-  attr_accessor :correct_count
   validate :has_word
 
   def add_lesson category
@@ -29,6 +28,7 @@ class Lesson < ApplicationRecord
         self.correct_count += 1
       end
     end
+    self.is_finished = true
     if save
       User.create_activity user_id, :finish_lesson, category_id
     end

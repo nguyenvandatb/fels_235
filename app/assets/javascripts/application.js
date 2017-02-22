@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min.js
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
@@ -23,4 +24,12 @@ $(document).ready(function(){
       alert(I18n.t("image_size_message"));
     }
   });
+});
+$(document).on('click','#side-menu li',function(e){
+  e.preventDefault();
+  if(!$('#side-menu li ul').hasClass('in')){
+    $('#side-menu li ul').eq($(this).index()-1).addClass('in');
+  }else {
+    $('#side-menu li ul').eq($(this).index()-1).removeClass('in');
+  }
 });
