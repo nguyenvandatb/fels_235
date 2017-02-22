@@ -29,8 +29,16 @@ $(document).on('click','#delete_all',function(e){
           for(i in not_destroy){
             $('#tab_body').find('td[value='+not_destroy[i]+']').parents('tr').remove();
           }
-          $('#notify-message').addClass('alert alert-success').text(I18n.t('delete_success')+':'+data.total_destroy);
-          $('#notify-message').append('<p>'+I18n.t('delete_fails')+':'+data.total_not_destroy+'</p>')
+          if (data.total_destroy.length > 0) {
+            $('#notify-message').addClass('alert alert-success')
+              .text(I18n.t('delete_success')+':'+data.total_destroy)
+                .delay(5000).fadeOut('slow');
+          }
+          if(data.total_not_destroy.length > 0){
+            $('#notify-message-fails').addClass('alert alert-danger')
+              .text(I18n.t('delete_fails')+':'+data.total_not_destroy)
+                .delay(5000).fadeOut('slow');
+          }
         }else {
           $('#notify-message').addClass('alert alert-danger').text(I18n.t('delete_fails'));
         }

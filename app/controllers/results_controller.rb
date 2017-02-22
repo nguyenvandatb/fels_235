@@ -1,7 +1,9 @@
 class ResultsController < ApplicationController
-  before_action :load_lesson, :logged_in_user, only: :show
+  before_action :load_lesson, :load_category, :logged_in_user, only: :show
 
   def show
+    @lessons = Lesson.includes(:user, :category).where users: {id: current_user.id},
+      categories: {id: @category.id}
     if params[:lesson]
       if @lesson.update_attributes lesson_params
         @lesson.grade_lesson

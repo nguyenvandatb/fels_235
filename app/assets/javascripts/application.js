@@ -62,10 +62,10 @@ $(document).on('turbolinks:load', function(){
   });
 });
 $(document).on('click','#side-menu li',function(e){
-  e.preventDefault();
   if(!$('#side-menu li ul').hasClass('in')){
     $('#side-menu li ul').eq($(this).index()-1).addClass('in');
   }else {
     $('#side-menu li ul').eq($(this).index()-1).removeClass('in');
   }
 });
+

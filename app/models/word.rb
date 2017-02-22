@@ -57,9 +57,9 @@ class Word < ApplicationRecord
   def check_answer_equal
     if self.answers.size >= Settings.number_questions_validate_min &&
       self.answers.size <= Settings.number_questions_validate_max
-      @duplicate = self.answers.detect{|answer| self.answers.count(answer) >
-        Settings.number_questions_validate_equal}
-      errors.add :items, I18n.t("validate_answer_same") if @duplicate.nil?
+      if answers.length > answers.group_by {|a| a[:content]}.length
+        errors.add :items, I18n.t("validate_answer_same")
+      end
     end
   end
 

@@ -486,3 +486,51 @@ footer {
     }
   }
 }
+
+#lessons_content {
+  margin-top: 50px;
+  box-shadow: 0px 0px 2px 0.04px rgba(0,0,0,0.05);
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #f8f9f9;
+  ul {
+    padding-left: 10px;
+    list-style: none;
+  }
+}
+
+#next_prev {
+  margin-top: 20px;
+  padding-left: 0px;
+}
+
+.lesson_info {
+  margin-top: 50px;
+}
+
+#result_content {
+  margin-top: 50px;
+  box-shadow: 0px 0px 2px 0.04px rgba(0,0,0,0.05);
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #f8f9f9;
+  ul {
+    padding-left: 10px;
+    list-style: none;
+  }
+  .result_count {
+    b{
+      font-size: 20px;
+      color: #337ab7;
+      font-weight: bold;
+    }
+  }
+  .result_title h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #141414;
+  }
+  .row {
+    padding: 10px;
+  }
+}
