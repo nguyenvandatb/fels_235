@@ -18,6 +18,8 @@ gem "turbolinks", "5.0.1"
 gem "jbuilder", "2.4.1"
 gem "config"
 gem "font-awesome-rails"
+gem "chartkick"
+gem "groupdate"
 gem "i18n-js"
 
 group :development, :test do

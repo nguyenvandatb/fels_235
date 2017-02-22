@@ -2,7 +2,8 @@
   <div class="col-md-3">
    <%= render "shared/sibar_lesson" %>
   </div>
-  <%= form_for @lesson, url: result_category_lesson_path(@lesson.category, @lesson) do |f| %>
+  <%= form_for @lesson, url: category_lesson_path(@lesson.category, @lesson) do |f| %>
+    <%= f.hidden_field :lesson_id, value: @lesson.id %>
     <div class="col-md-6" id="lessons_content" >
       <% number_question = @lesson.results.count %>
       <% @i = 0 %>
@@ -53,3 +54,4 @@
     <div class="col-md-3"></div>
   </div>
 </div>
+

@@ -31,7 +31,9 @@
            </a>
            <ul class="dropdown-menu">
              <li>
-               <a href="#"><i class="fa fa-fw fa-user"></i> <%= t ".profile" %></a>
+               <%= link_to current_user do %>
+                <i class="fa fa-fw fa-user"></i> <%= t ".profile" %>
+               <% end %>
              </li>
              <li>
                <%= link_to logout_path, method: :delete do %>

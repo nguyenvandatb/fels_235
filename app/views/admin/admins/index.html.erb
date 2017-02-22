@@ -1,4 +1,5 @@
 <%= provide :title, t(".title") %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <div class="row">
   <div class="col-lg-3 col-md-6">
     <div class="panel panel-primary">
@@ -13,7 +14,7 @@
           </div>
         </div>
       </div>
-      <a href="#">
+      <%= link_to admin_categories_path do %>
         <div class="panel-footer">
           <span class="pull-left"><%= t ".view_details" %></span>
           <span class="pull-right">
@@ -21,7 +22,7 @@
           </span>
           <div class="clearfix"></div>
         </div>
-      </a>
+      <% end %>
     </div>
   </div>
    <div class="col-lg-3 col-md-6">
@@ -37,7 +38,7 @@
           </div>
         </div>
       </div>
-      <a href="#">
+      <%= link_to admin_words_path do %>
         <div class="panel-footer">
           <span class="pull-left"><%= t ".view_details" %></span>
           <span class="pull-right">
@@ -45,7 +46,7 @@
           </span>
           <div class="clearfix"></div>
         </div>
-      </a>
+      <% end %>
     </div>
   </div>
    <div class="col-lg-3 col-md-6">
@@ -85,7 +86,7 @@
           </div>
         </div>
       </div>
-      <a href="#">
+      <%= link_to admin_users_path do %>
         <div class="panel-footer">
           <span class="pull-left"><%= t ".view_details" %></span>
           <span class="pull-right">
@@ -93,7 +94,15 @@
           </span>
           <div class="clearfix"></div>
         </div>
-      </a>
+      <% end %>
     </div>
   </div>
+</div>
+
+<div class="row">
+<%= column_chart [
+  {name: "User", data: @supports.users_by_day},
+  {name: "Category", data: @supports.categories_by_day},
+  {name: "Word", data: @supports.words_by_day},
+  {name: "Lesson", data: @supports.lessons_by_day}] %>
 </div>

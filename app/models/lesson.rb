@@ -3,20 +3,26 @@ class Lesson < ApplicationRecord
   belongs_to :category
   has_many :results
   has_many :words, through: :results
+
   accepts_nested_attributes_for :results, reject_if:
     proc {|result| result[:answer_id].blank?}
   validate :has_word
+  before_create :add_words
+  after_create :start_activity
+  before_update :grade_lesson
+  after_update :finish_activity
 
-  def add_lesson category
-    words = []
-    if category.words.count >= Settings.words_number
-      words = category.words.sample Settings.words_number
-    end
-    words.each do |word|
-      self.words << word
-    end
-    if save
-      User.create_activity user_id, :start_lesson, category_id
+  private
+
+  def add_words
+    words = category.words.order("RANDOM()").limit(Settings.words_number)
+    self.words << words
+  end
+
+  def has_word
+    if category.words.count < Settings.words_number
+      errors.add :cannot_create, I18n.t("cannot_create_lesson")
+      throw :abort
     end
   end
 
@@ -29,16 +35,13 @@ class Lesson < ApplicationRecord
       end
     end
     self.is_finished = true
-    if save
-      User.create_activity user_id, :finish_lesson, category_id
-    end
   end
 
-  private
-  def has_word
-    unless self.words.any?
-      errors.add(:cannot_create, I18n.t("cannot_create_lesson"))
-      throw :abort
-    end
+  def start_activity
+    User.create_activity self.user_id, :start_lesson, self.category_id
+  end
+
+  def finish_activity
+    User.create_activity self.user_id, :finish_lesson, self.category_id
   end
 end

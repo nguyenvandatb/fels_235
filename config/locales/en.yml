@@ -182,6 +182,8 @@ en:
     test:
       submit: "Submit"
     create:
+      create_success: "Create lesson successfully"
+      create_fail: "Cannot create lesson"
       err_message: "Cannot create lesson"
   tests:
     show:

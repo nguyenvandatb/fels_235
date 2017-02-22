@@ -84,6 +84,11 @@ class User < ApplicationRecord
     Activity.create user_id: user_id, action_type: action_type, action_id: action_id
   end
 
+  def lessons_in_category category_id
+    Lesson.includes(:user, :category).
+    where("user_id = (?) AND category_id = ?", self.id, category_id)
+  end
+
   private
     def downcase_email
       self.email = email.downcase

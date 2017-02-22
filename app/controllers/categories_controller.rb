@@ -3,8 +3,7 @@ class CategoriesController < ApplicationController
   before_action :logged_in_user, only: [:show, :index]
 
   def show
-    @lessons = Lesson.includes(:user, :category).where users: {id: current_user.id},
-      categories: {id: @category.id}
+    @lessons = current_user.lessons_in_category params[:id]
   end
 
   def index
@@ -15,8 +14,9 @@ class CategoriesController < ApplicationController
   end
 
   private
-    def load_category
-      @category = Category.find_by id: params[:id]
-      render_404 unless @category
-    end
+
+  def load_category
+    @category = Category.find_by id: params[:id]
+    render_404 unless @category
+  end
 end

@@ -57,6 +57,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    chartkick (2.2.3)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -209,6 +210,8 @@ GEM
     formatador (0.2.5)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -361,11 +364,13 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.10)
   byebug (= 9.0.0)
   carrierwave (= 0.11.2)
+  chartkick
   coffee-rails (= 4.2.1)
   config
   faker (= 1.6.6)
   fog (= 1.38.0)
   font-awesome-rails
+  groupdate
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   i18n-js
