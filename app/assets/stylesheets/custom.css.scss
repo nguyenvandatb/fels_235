@@ -281,7 +281,16 @@ footer {
     margin: 0;
     width: inherit;
   }
+  img {
+    float: left;
+  }
+  a {
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
 }
+
 .form_search_user {
   margin-bottom: 20px;
 }
@@ -323,6 +332,14 @@ footer {
 #show_follow{
   .profile-user-img {
     margin: 0px;
+  }
+  img {
+    float: left;
+  }
+  a {
+    float: left;
+    margin-top: 40px;
+    margin-left: 10px;
   }
 }
 
