@@ -31,11 +31,19 @@
             <div class="table-responsive">
                <table class="table table-striped">
                  <tbody>
-                   <tr>
-                   </tr>
+                   <% if @activities.any? %>
+                     <% @activities.each_with_index do |activity, index| %>
+                       <%= render activity, index: index %>
+                     <% end %>
+                   <% else %>
+                     <div class="alert alert-warning">
+                       <%= t ".not_found_categories" %>
+                     </div>
+                   <% end %>
                  </tbody>
               </table>
             </div>
+            <p class="text-center"><%= will_paginate @activities %></p>
           </div>
       </div>
     </div>

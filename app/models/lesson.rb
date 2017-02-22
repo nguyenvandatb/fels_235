@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
   attr_accessor :correct_count
   validate :has_word
 
-  def add_lesson user, category
+  def add_lesson category
     words = []
     if category.words.count >= Settings.words_number
       words = category.words.sample Settings.words_number
@@ -16,8 +16,9 @@ class Lesson < ApplicationRecord
     words.each do |word|
       self.words << word
     end
-    user.lessons << self
-    category.lessons << self
+    if save
+      User.create_activity user_id, :start_lesson, category_id
+    end
   end
 
   def grade_lesson
@@ -28,11 +29,16 @@ class Lesson < ApplicationRecord
         self.correct_count += 1
       end
     end
-    self.save
+    if save
+      User.create_activity user_id, :finish_lesson, category_id
+    end
   end
 
   private
-    def has_word
-      errors.add(:cannot_create, I18n.t("cannot_create_lesson")) unless self.words.count > 0
+  def has_word
+    unless self.words.any?
+      errors.add(:cannot_create, I18n.t("cannot_create_lesson"))
+      throw :abort
     end
+  end
 end

@@ -275,3 +275,20 @@ en:
         success: "Update word and answer success!"
       edit:
         title: "Update word"
+  lessons:
+    test:
+      submit: "Submit"
+    create:
+      err_message: "Cannot create lesson"
+  results:
+    show:
+      update_failed: "Update failed"
+      correct_answer: "Correct Answer"
+  activities:
+    activity:
+      you: "You "
+      start: "started "
+      finish: "finished "
+      follow: "followed "
+      unfollow: "unfollowed "
+      ago: " ago"

@@ -2,11 +2,8 @@ class LessonsController < ApplicationController
   before_action :load_category, :logged_in_user, only: :create
 
   def create
-    lesson = Lesson.new is_finished: false
-    lesson.add_lesson current_user, @category
-    unless lesson.words.count > 0
-      flash[:error] = t ".err_message"
-    end
+    lesson = Lesson.new user_id: current_user.id, category_id: @category.id, is_finished: false
+    lesson.add_lesson @category
     redirect_to :back
   end
 
