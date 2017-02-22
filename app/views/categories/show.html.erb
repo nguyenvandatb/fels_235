@@ -1,17 +1,6 @@
 <% provide :title, t(".title") %>
 <div class="all_lessons" id="all_lessons">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div>
-          <span><%= link_to t(".create_lesson"), [@category, :lessons], method: :post %></span>
-        </div>
-        <ol class="lessons">
-          <% @lessons.each do |lesson| %>
-            <%= render "lesson_item", lesson: lesson %>
-        <% end %>
-        </ol>
-      </div>
-    </div>
+  <div class="container-fluid">
+    <%= render "shared/sibar_lesson" %>
   </div>
 </div>

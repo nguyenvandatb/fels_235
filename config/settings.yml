@@ -21,3 +21,4 @@ default_locale: "en"
 per_page_category_admin: 20
 per_page_user_admin: 20
 per_page_activities: 20
+index_class_number: 1
