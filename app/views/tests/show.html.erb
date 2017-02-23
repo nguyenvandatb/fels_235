@@ -1,40 +1,55 @@
-<%= form_for @lesson, url: result_category_lesson_path(@lesson.category, @lesson) do |f| %>
-  <div class="row">
-    <% number_question = @lesson.results.count %>
-    <%= f.fields_for :results do |ff| %>
-      <% result = ff.object %>
-      <div class="question col-md-8" style="display:none">
-        <div class="question_word"><%= result.word.content %></div>
-        <%= ff.text_field :id, hidden: :true, readonly: :true %>
-        <div class="question_answer">
-          <% result.word.answers.each do |answer| %>
-            <%= ff.label :answer_id, answer.content %>
-            <%= ff.radio_button :answer_id, answer.id, checked: false %>
-          <% end %>
+<div class="container-fluid">
+  <div class="col-md-3">
+   <%= render "shared/sibar_lesson" %>
+  </div>
+  <%= form_for @lesson, url: result_category_lesson_path(@lesson.category, @lesson) do |f| %>
+    <div class="col-md-6" id="lessons_content" >
+      <% number_question = @lesson.results.count %>
+      <% @i = 0 %>
+      <%= f.fields_for :results do |ff| %>
+        <% result = ff.object %>
+          <div class="question" style="display: none;">
+            <strong class="question_word"><%= @i += 1 %>. <%= result.word.content %></strong>
+            <%= ff.text_field :id, hidden: :true, readonly: :true %>
+            <div class="question_answer">
+              <ul>
+                <% result.word.answers.each do |answer| %>
+                  <li>
+                    <%= ff.radio_button :answer_id, answer.id, checked: false %>
+                    <%= ff.label :answer_id, answer.content %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-3">
+      <div class="lesson_info">
+        <div class="lesson_progress_text">
+          <span class="current_question_count">1</span>/
+          <span><%= number_question %></span>
         </div>
-        <hr>
-      </div>
-    <% end %>
-    <div class="lesson_info col-md-4">
-      <div class="lesson_progress_text">
-        <span class="current_question_count">1</span>/
-        <span><%= number_question %></span>
-      </div>
-      <div class="progress">
-        <div class="progress-bar progress-bar-info lesson_progress_bar" role="progressbar"
-          aria-valuenow="1" aria-valuemin="1" aria-valuemax=<%= number_question %>
+        <div class="progress">
+          <div class="progress-bar progress-bar-info lesson_progress_bar" role="progressbar"
+            aria-valuenow="1" aria-valuemin="1" aria-valuemax=<%= number_question %>
             style="width:<%= 100 / number_question %>%">
+          </div>
+        </div>
+        <div class="submit">
+          <%= f.submit t("submit"), class: "btn btn-primary submit_test", style: "display:none" %>
         </div>
       </div>
-      <div>
-        <%= f.submit t("submit"), class: "btn btn-primary submit_test", style: "display:none" %>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="next_prev col-md-8" id="next_prev">
+        <button type="button" class="btn btn-default prev" disabled="true"><%= t ".back" %></button>
+        <button type="button" class="btn btn-primary next"><%= t ".next" %></button>
       </div>
     </div>
+    <div class="col-md-3"></div>
   </div>
-  <div class="row">
-    <div class="next_prev col-md-8">
-      <button type="button" class="btn btn-default prev" disabled="true"><%= t ".back" %></button>
-      <button type="button" class="btn btn-primary next"><%= t ".next" %></button>
-    </div>
-  </div>
-<% end %>
+</div>

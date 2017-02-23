@@ -7,13 +7,14 @@ class Admin::WordsController < ApplicationController
   def index
     if params[:category_id].present? || params[:q].present? ||
       params[:action_met].present?
-       @words = Word.select(:id, :content, :created_at).includes(:answers)
+       @words = Word.select(:id, :content, :created_at).order("created_at DESC")
+                    .includes(:answers)
                     .filter_category(params[:category_id])
                     .search(params[:q])
                     .send(params[:action_met], current_user.id)
                     .paginate page: params[:page],per_page: Settings.per_page_word_admin
     else
-      @words = Word.select(:id, :content, :created_at)
+      @words = Word.select(:id, :content, :created_at).order("created_at DESC")
                    .includes(:answers)
                    .paginate page: params[:page],per_page: Settings.per_page_word_admin
     end
@@ -30,7 +31,7 @@ class Admin::WordsController < ApplicationController
     @word = Word.new word_params
     if @word.save
       flash[:success] = t ".success"
-      redirect_to admin_root_url
+      redirect_to admin_words_url
     else
      render :new
     end
