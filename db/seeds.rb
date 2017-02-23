@@ -20,7 +20,12 @@ User.create!(name:  "Example User",
     password_confirmation: password,
     is_admin: false)
 end
-
+users = User.all
+user  = users.first
+following = users[2..15]
+followers = users[3..10]
+following.each {|followed| user.follow(followed)}
+followers.each {|follower| follower.follow(user)}
 15.times do
   name = Faker::Name.title
   description = Faker::Lorem.paragraph

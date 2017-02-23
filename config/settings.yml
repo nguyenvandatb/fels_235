@@ -6,11 +6,12 @@ per_page: 5
 per_page_category: 24
 per_page_word: 100
 gravatar_size: 50
-words_number: 3
+words_number: 10
 number_questions: 1
 number_questions_validate_min: 2
 number_questions_validate_max: 6
 number_questions_validate_equal: 1
+number_question_validate_same: 0
 max_category_name_length: 50
 max_image_size: 5
 in_megabyte_number: 1024

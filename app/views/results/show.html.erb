@@ -1,19 +1,52 @@
-<div><%= @lesson.correct_count %>/<%= @lesson.words.count %></div>
-<%= form_for @lesson do |f| %>
-  <%= f.fields_for :results do |ff| %>
-    <% result = ff.object %>
-    <div><%= result.word.content %></div>
-    <%= ff.text_field :id, hidden: :true, readonly: :true %>
-    <% result.word.answers.each do |answer| %>
-      <%= ff.label :answer_id, answer.content %>
-      <% if result.answer_id == answer.id %>
-        <%= ff.radio_button :answer_id, answer.id, checked: true, disabled: true %>
-      <% else %>
-        <%= ff.radio_button :answer_id, answer.id, disabled: true %>
+<div class="container-fluid">
+  <div class="col-md-3">
+    <%= render "shared/sibar_lesson" %>
+  </div>
+  <div class="col-md-6" id="result_content">
+    <div class="result_date">
+      <span><%= t ".test_date" %>: <i><%= @lesson.updated_at %></i></span>
+    </div>
+    <div class="result_count">
+      <span><%= t ".test_result" %>:
+        <b><%= @lesson.correct_count %>/<%= @lesson.words.count %></b>
+      </span>
+    </div>
+    <div class="result_title text-center">
+       <h2><%= @lesson.category.name %></h2>
+    </div>
+    <div class="divider">
+      <hr style="width: 100%; color: #ccc; height: 2px;">
+    </div>
+    <div class="result_content">
+      <%= form_for @lesson do |f| %>
+      <% @i = 0 %>
+        <%= f.fields_for :results do |ff| %>
+          <% result = ff.object %>
+          <div class="row">
+            <strong class="question_word"><%= @i += 1 %>. <%= result.word.content %></strong>
+            <%= ff.text_field :id, hidden: :true, readonly: :true %>
+            <div class="result_answer">
+              <ul>
+                <% result.word.answers.each do |answer| %>
+                  <li>
+                    <% if result.answer_id == answer.id %>
+                      <%= ff.radio_button :answer_id, answer.id, checked: true, disabled: true %>
+                    <% else %>
+                      <%= ff.radio_button :answer_id, answer.id, disabled: true %>
+                    <% end %>
+                    <%= ff.label :answer_id, answer.content %>
+                  </li>
+                <% end %>
+                <% if result.is_correct? %>
+                  <p class="label label-success"><%= t ".correct_answer" %></p>
+                <% else %>
+                  <p class="label label-danger"><%= t ".wrong_answer" %></p>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <br>
-    <span><%= t "correct_answer" + " " + result.word.correct_content %></span>
-    <hr>
-  <% end %>
-<% end %>
+    </div>
+  </div>
+</div>

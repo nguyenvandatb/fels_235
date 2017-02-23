@@ -114,6 +114,14 @@ en:
       change_link: "Change link"
     update:
       profile_updated_message: "Profile updated"
+    form:
+      register: "Register"
+      submit: "Submit"
+      title: "Register"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
   sessions:
     new:
       title: "Login"
@@ -175,10 +183,22 @@ en:
       submit: "Submit"
     create:
       err_message: "Cannot create lesson"
+  tests:
+    show:
+      back: "Back"
+      next: "Next"
+      test_date: "Test date"
+      test_result: "Test result"
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong answer"
   results:
     show:
       update_failed: "Update failed"
       correct_answer: "Correct Answer"
+      test_date: "Test date"
+      test_result: "Test result"
+      correct_answer: "Correct answer"
+      wrong_answer: "Wrong answer"
     new:
       submit: "Submit"
   words:
@@ -241,12 +261,10 @@ en:
         title: "Add A Category"
       create:
         create_success: "Add successfully!"
-        create_error: "Cannot add category"
       search_form:
         add_category: "Add Category"
         filter: "Filter"
       index:
-        count_categories: "Found categories: "
         categories: "categories"
         name: "Name"
         description: "Description"
@@ -282,15 +300,6 @@ en:
         success: "Update word and answer success!"
       edit:
         title: "Update word"
-  lessons:
-    test:
-      submit: "Submit"
-    create:
-      err_message: "Cannot create lesson"
-  results:
-    show:
-      update_failed: "Update failed"
-      correct_answer: "Correct Answer"
   activities:
     activity:
       you: "You "
@@ -299,3 +308,4 @@ en:
       follow: "followed "
       unfollow: "unfollowed "
       ago: " ago"
+

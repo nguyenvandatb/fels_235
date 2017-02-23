@@ -6,7 +6,7 @@
           class: "btn btn-primary" %>
       </li>
       <% @lessons.each do |lesson| %>
-        <%= render "lesson_item", lesson: lesson %>
+        <%= render "categories/lesson_item", lesson: lesson %>
       <% end %>
     </ul>
   </div>
